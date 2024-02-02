@@ -71,6 +71,7 @@ p:last-child {
 ::-webkit-input-placeholder {
   opacity: 1;
   color: inherit;
+
 }
 
 .form-control:-moz-placeholder,
@@ -388,12 +389,15 @@ label {
   left: -webkit-calc(100% + 14px);
   left: -moz-calc(100% + 14px);
   left: calc(100% + 14px);
+ 
 }
 
 .section-title h3::before {
   background-color: #1e2530;
   width: 96px;
   bottom: 14px;
+  display: block;
+  
 }
 
 .section-title h3::after {
@@ -1621,6 +1625,7 @@ padding: 0px 30px 0px 0px;
     padding-left: 15px;
     margin-right: 29px ; 
     margin-left: 29px;
+    margin-top: 30px;
   }
   .page-title h2 {
     font-size: 35px;
@@ -1686,7 +1691,7 @@ padding: 0px 30px 0px 0px;
     display: block;
   }
   .page-nav{
-    padding-top: 6% !important;
+    /* padding-top: 6% !important; */
   }
 
   .progress .skill-name {
@@ -1731,9 +1736,72 @@ padding: 0px 30px 0px 0px;
   .contact-form .input-field.name {
     margin-right: 0;
   }
+  .section-title h3::before {
+  content: "";
+  height: 2px;
+  position: absolute;
+  bottom: -10px !important;
+  left: -webkit-calc(0% + 14px);
+  left: -moz-calc(0% + 14px);
+  left: calc(0% + 14px);
+  width: 220px;
+ 
+}
+.section-title h3::after {
+  content: "";
+  height: 2px;
+  position: absolute;
+  bottom: -17px !important;
+  left: -webkit-calc(0% + 14px);
+  left: -moz-calc(0% + 14px);
+  left: calc(0% + 14px);
+  width: 170px;
+ 
+}
+.page-nav{
+bottom: -100px !important;
+}
+.contact-form .input-field {
+  margin-bottom: 10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.contact-form .form-control {
+  padding-left: 10px;
+}
+.contact-form textarea.form-control {
+  padding: 15px 10px 15px 10px;
+}
   
 }
+@media (max-width:450px) {
+  .contact-block .media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .media-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
+  }
+  .contact-block .media-body {
+    padding-left: 0px; 
+  }
+  .contact-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-social li{
+margin: 0px 10px;
+  }
+}
 body > main > div > div > div > div:nth-child(2) > div.col-xs-12.col-sm-7.col-md-7.col-md-offset-1.col-lg-offset-2{	
 	width: 60% !important;	
 	margin-left: 1% !important;

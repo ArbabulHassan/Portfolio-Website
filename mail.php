@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = trim($_POST["message"]);
 
     // Set up email parameters
-    $recipient = "arbabulhassan13@gmail.com"; // Replace with your Gmail address
+    $recipient = "arbabulhassan13@gmail.com"; // Replace with your email address
     $subject = "New Contact Form Submission: $subject";
     $email_content = "Name: $name\n";
     $email_content .= "Email: $email\n\n";
@@ -16,16 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Set up email headers
     $email_headers = "From: $name <$email>";
 
-    // Send the email
-    if (wp_mail($recipient, $subject, $email_content, $email_headers)) {
-        // Email sent successfully
-        echo "Thank you! Your message has been sent.";
+    // Send the email using PHP's mail function
+    if (mail($recipient, $subject, $email_content, $email_headers)) {
+        echo "success";
     } else {
-        // Email failed to send
-        echo "Sorry, there was an error sending your message. Please try again later.";
+        echo "error";
     }
 } else {
-    // Form not submitted
-    echo "Something went wrong.";
+    echo "error";
 }
 ?>

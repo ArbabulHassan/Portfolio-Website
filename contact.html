@@ -22,6 +22,47 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/dark.css">
         <link id="color-changer" rel="stylesheet" href="css/colors/color-0.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+       
+            <script>
+$(document).ready(function() {
+    $("#contact-form").submit(function(e) {
+        e.preventDefault();
+
+        $("#contact-form button").attr("disabled", true);
+        $(".msg-success").hide();
+        $(".msg-failed").hide();
+        $(".msg-loading").show();
+
+        $.ajax({
+            type: "POST",
+            url: "mail.php",
+            data: $("#contact-form").serialize(),
+            success: function(response) {
+                $("#contact-form button").attr("disabled", false);
+                $(".msg-loading").hide();
+
+                if (response == "success") {
+                    $(".msg-success").show();
+                } else {
+                    $(".msg-failed").show();
+                }
+            },
+            error: function() {
+                $("#contact-form button").attr("disabled", false);
+                $(".msg-loading").hide();
+                $(".msg-failed").show();
+            }
+        });
+    });
+});
+</script>
+
+       
+
+
     </head>
 
     <body class="dark">
@@ -54,11 +95,11 @@
                         </div> <!-- /.row -->
 
                         <div class="row">
-                            <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+                            <div class="col-sm-12 col-sm-5 col-md-4 col-lg-3">
                                 <div class="contact-block">
                                     <div class="media">
                                         <div class="media-left">
-                                            <i class="tf-envelope2"></i>
+                                            <i class="fa fa-envelope"></i>
                                         </div>
                                         <div class="media-body">
                                             <h4>Email</h4>
@@ -70,7 +111,7 @@
                                 <div class="contact-block">
                                     <div class="media">
                                         <div class="media-left">
-                                            <i class="tf-phone2"></i>
+                                            <i class="fa fa-phone"></i>
                                         </div>
                                         <div class="media-body">
                                             <h4>Phone</h4>
@@ -82,9 +123,7 @@
                                 <div class="contact-block">
                                     <div class="media">
                                         <div class="media-left">
-                                            <i class="tf-mobile">
-                                                <!--<img src="img/fiverr.svg" style="height: 4%;color:white;">-->
-                                            </i>
+                                            <i class="fa fa-code" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
                                             <h4>Hire Me</h4>
@@ -113,36 +152,36 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-xs-12 col-sm-7 col-md-7 col-md-offset-1 col-lg-offset-2">
+                            <div class="col-sm-12 col-sm-7 col-md-7 col-md-offset-1 col-lg-offset-2">
                                 <div class="section-title clear">
                                     <h3>Send me a Message</h3>
-                                    <span class="bar-dark"></span>
-                                    <span class="bar-primary"></span>
+                                    <!-- <span class="bar-dark"></span>
+                                    <span class="bar-primary"></span> -->
                                 </div>
 
                                 <form id="contact-form" class="row contact-form no-gutter" action="mail.php" method="post">
                                     <div class="col-xs-12 col-sm-6">
                                         <div class="input-field name">
-                                            <span class="input-icon" id="name" ><i class="tf-profile-male"></i></span>
-                                            <input type="text" class="form-control"  placeholder="Enter your name">
+                                            <span class="input-icon" id="name"><i class="tf-profile-male"></i></span>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-6">
                                         <div class="input-field email">
-                                            <span class= "input-icon" id="email"><i class="tf-envelope2"></i></span>
-                                            <input type="email" class="form-control" name="email" placeholder="Your email address">
+                                            <span class="input-icon" id="email"><i class="tf-envelope2"></i></span>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your email address" required>
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-12">
                                         <div class="input-field">
-                                            <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
-                                            <input type="text" class="form-control" name="subject" placeholder="Enter the discussion title">
+                                            <span class="input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter the discussion title" required>
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-12">
                                         <div class="input-field message">
-                                            <span class= "input-icon" ><i class="tf-pencil2"></i></span>
-                                            <textarea name="message" id="message" class="form-control" placeholder="Write your message"></textarea>
+                                            <span class="input-icon"><i class="tf-pencil2"></i></span>
+                                            <textarea name="message" id="message" name="message"  class="form-control" placeholder="Write your message" required></textarea>
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-12">
@@ -154,13 +193,9 @@
                                         <div class="msg-success">Your Message was sent successfully</div>
                                         <div class="msg-failed">Something went wrong, please try again later</div>
                                     </div> <!-- ./col- -->
-                                </form> <!-- /.row -->
-
-
-
-
-
-                                
+                                </form>
+                                 <!-- /.row -->
+    
                             </div> <!-- /.col- -->
                         </div> <!-- /.row -->
                     </div> <!-- /.container -->
@@ -169,7 +204,7 @@
                         <div class="container">
                             <div class="flex flex-middle space-between">
                                 <span class="prev-page"><a href="resume.html" class="link">&larr; Prev Page</a></span>
-                                <span class="copyright hidden-xs">Copyright &copy; 2023 Space Tech Store, All Rights Reserved.</span>
+                                <span class="copyright hidden-xs">Copyright &copy; 2023 Webster Store, All Rights Reserved.</span>
                             </div>
                         </div>
                         <!-- /.page-nav -->
@@ -192,6 +227,8 @@
         <script src="js/jquery-validation.min.js"></script>
         <script src="js/form.min.js"></script>
         <script src="js/main.js"></script>
+
+
         
     </body>
 </html>
