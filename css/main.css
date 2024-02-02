@@ -7,7 +7,8 @@
 	Base Styles
 -------------------------------------------------*/
 body {
-  font-family: "Libre Baskerville", serif;
+  /* font-family: "Libre Baskerville", serif; */
+  font-family: Poppins, sans-serif !important;
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
@@ -331,9 +332,26 @@ label {
 }
 
 .page-title p {
-  font-size: 14px;
+  font-size: 16px;
   margin:0px 29px;
+  text-align: left;
+  color: #fff;
 }
+.page-title p span{
+  font-size: 18px;
+}
+.page-title h1{
+  font-size: 4rem;
+  color:#fff !important;
+  font-weight: bold;
+  text-align: left;
+  margin:0px 29px;
+  margin-bottom: 20px;
+  }
+.page-title h1 span{
+  font-size: 4rem;
+  color:var(--primary) !important;
+  }
 
 .page-title .title-bg {
   color: rgba(30, 37, 48, 0.07);
@@ -392,10 +410,11 @@ label {
 }
 
 .page-nav {
-  bottom: 10px !important;
+  bottom: 0px !important;
   left: 0;
   position: absolute;
   right: 0;
+  background: var(--primary);
 }
 
 .page-nav span {
@@ -404,8 +423,20 @@ label {
   font-weight: 500;
   line-height: 0.9;
   text-transform: uppercase;
-}
+  text-align: center;
+  padding:20px 0px;
+  color: #fff;
 
+}
+.page-nav .index-nav {
+width:100%;
+  display: flex;
+  justify-content: center;
+}
+.page-nav .link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
 /*------------------------------------------------
     Home Page
 -------------------------------------------------*/
@@ -691,13 +722,13 @@ label {
 .about-author .author-thumb {
   background-color: #fff;
   border: 5px solid #1e2530;
-  margin-right: 30px;
+  margin-right: 12px;
   padding: 5px;
 }
 
 .about-author .author-thumb img {
   border: 2px solid #1e2530;
-  width: 145px;
+  width: 160px;
 }
 
 .about-author .author-desc p {
@@ -706,10 +737,16 @@ label {
   letter-spacing: 1px;
   margin-bottom: 4px;
   text-transform: uppercase;
+  display: flex;
+}
+.about-author .author-desc p span{
+  display: inline-block;
+  flex: 4;
 }
 
 .about-author .author-desc b {
   font-family: "Open Sans", sans-serif;
+  flex: 3;
 }
 
 .progress {
@@ -739,8 +776,9 @@ label {
 .progress .skill-name {
   border-right: 2px solid #2e333a;
   min-width: 160px;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
+  padding-left: 20px;
 }
 
 .progress .skill-bar {
@@ -940,6 +978,9 @@ label {
   color: #aaaaaa;
   font-size: 12px;
 }
+.history-item p{
+padding: 0px 30px 0px 0px;
+}
 
 .history-hex {
   display: block;
@@ -1063,7 +1104,9 @@ label {
 }
 
 .service-hex:hover p {
-  height: 72px;
+  height: 80px;
+  position:relative;
+  top:-20px;
 }
 
 
