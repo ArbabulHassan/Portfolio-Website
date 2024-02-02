@@ -1,0 +1,63 @@
+:root
+{
+  --primary:#fd5555;
+}
+/*
+ * Selection color
+ */
+::-moz-selection {
+  background-color: var(--primary);
+}
+
+::selection {
+  background-color: var(--primary);
+}
+
+/* background color */
+.btn-primary,
+.loading-mask,
+.section-title h3::after,
+.hexagon-item:hover .hex-item div::before,
+.hexagon-item:hover .hex-item div::after,
+.progress .bar,
+.contact-social li:hover span {
+  background-color: var(--primary);
+}
+
+.nicescroll-cursors {
+  background: var(--primary) !important;
+}
+
+/* color */
+.primary,
+.link:hover,
+.filter .active,
+.works-item h4,
+.msg-success {
+  color: var(--primary);
+}
+
+/* border color */
+.testimonials .owl-dot.active {
+  border-color: var(--primary);
+}
+
+/* border top color */
+.site-wrapper,
+.contact-social li:hover span::after,
+.contact-social-hex:hover::before {
+  border-top-color: var(--primary);
+}
+
+/* border bottom color */
+.filter .active,
+.contact-social li:hover span::before,
+.contact-social-hex:hover::after {
+  border-bottom-color: var(--primary);
+}
+
+/* fill color */
+.service-hex:hover .fill,
+.service-hex:hover .st1 {
+  fill: var(--primary);
+}

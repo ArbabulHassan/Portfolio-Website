@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+   --primary: #fd5555;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.container-02 {
+	background-image: url("https://hamdanme.online/img/back.png") !important;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	width: 100%;
+	align-content: stretch;
+	flex-wrap: wrap;
+}
+
+
+.container-02 .glassmorphic-card {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	z-index: 1;
+	width: 350px;
+	height: 720px;
+	padding: 10px 30px;
+	margin: 28px;
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(5px);
+	overflow: hidden;
+
+}
+
+.container-02 .glassmorphic-card:before {
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	font-size: 10em;
+	background: rgba(255, 255, 255, 0.05);
+	pointer-events: none;
+}
+
+.container-02 .glassmorphic-card .imgBox {
+	position: relative;
+	text-align: center;
+}
+
+.container-02 .glassmorphic-card .imgBox i {
+	font-size: max(80px);
+	color: rgba(255, 255, 255, 0.1);
+}
+
+.container-02 .glassmorphic-card .contentBox {
+	position: relative;
+	margin-top: 20px;
+	text-align: center;
+	transition: 0.5s;
+	display: contents;
+}
+
+.container-02 .glassmorphic-card .contentBox2 {
+	padding: 20PX 0;
+}
+
+
+
+.container-02 .glassmorphic-card .contentBox2:before {
+	content: 'graphic';
+	position: fixed;
+	top: calc(30%);
+	left: -40%;
+	width: 100%;
+	font-size: 4em;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+	transform: rotate(-90deg);
+	color: rgba(0, 0, 0, 0.2);
+}
+
+.container-02 .glassmorphic-card .contentBox1:before {
+	content: 'website';
+	position: fixed;
+	top: calc(30%);
+	left: -40%;
+	width: 100%;
+	font-size: 4em;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+	transform: rotate(-90deg);
+	color: rgba(0, 0, 0, 0.2);
+}
+
+.container-02 p span {
+	font-weight: 700;
+}
+
+.container-02 .glassmorphic-card ul {
+	list-style-type: none;
+	padding: 8px 20px;
+	margin: 5px 5px 0 0;
+	background: #ffffffcf;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
+	color: var(--primary);
+	border-radius: 20px;
+	text-decoration: none;
+	font-weight: 500;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+li {
+	text-align: center;
+}
+
+li a {
+	color: #000;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 850px) {
+	body {
+		overflow: hidden;
+	}
+
+	* {
+		font-size: 12;
+	}
+
+	.container-02 {
+		flex-wrap: nowrap !important;
+
+
+	}
+
+	.container-02 .glassmorphic-card {
+		width: 80% !important;
+		align-items: self-end !important;
+		height: auto !important;
+		overflow: hidden;
+
+	}
+
+	.container-02 .glassmorphic-card .contentBox1:before,
+	.container-02 .glassmorphic-card .contentBox2:before {
+		top: 1vh !important;
+		width: 100%;
+		font-size: 2em;
+		text-transform: uppercase;
+		font-weight: 400;
+		letter-spacing: 2px;
+		transform: rotate(-90deg);
+		color: rgba(0, 0, 0, 0.2);
+	}
+
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: auto !important;
+		overflow: hidden !important;
+	}
+
+	
+	a{
+		font-size: 12px;
+	}
+	.container-02 .glassmorphic-card ul{
+		padding: 3px 20px;
+	}
+}
